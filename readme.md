@@ -1,4 +1,4 @@
-# Outline
+# Question
 Write a RESTful service which calculates and returns all the prime numbers up to and including a number provided.
 
 **Example**
@@ -25,3 +25,18 @@ The REST call would look something like http://your.host.com/primes/10 and shoul
 * Consider ways to improve overall performance e.g. caching results, concurrent algorithm
 * Consider supporting multiple algorithms that can be switched based on optional parameters
 * Please respond with the coding assignment link to github.
+
+# Build and Run
+
+1. Build the code base `.\mvnw clean install`
+2. Run via Maven using Boot: `.\mvnw spring-boot:run`
+
+Once the API is running, it can be consumed:
+
+`GET localhost:8080/primes/10` - to get the list of prime number till the given number
+
+`POST localhost:8080/primes/10?algorithmType=BRUTE_FORCE` - to get the list of prime number till the given number along with given algorithm.
+
+Currently, SieveOfEratosthenes Algorithm and BruteForceAlgorithm are supported
+
+All tests will be executed as part of build but can also be run independently if need be.
